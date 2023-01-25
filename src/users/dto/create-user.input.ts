@@ -8,8 +8,17 @@ export class CreateUserInput {
   lastname: string;
   @Field()
   email: string;
+  @Field()
+  createdAt: Date;
+  @Field()
+  updatedAt: Date;
 }
 
+@InputType()
+export class FindUserInput {
+    @Field()
+    readonly _id: string;
+}
 
 @ObjectType()
 export class CreateUserDto {
@@ -21,6 +30,10 @@ export class CreateUserDto {
     readonly lastname: string;
     @Field()
     readonly email: string;
+    @Field()
+    readonly createdAt: Date;
+    @Field()
+    readonly updatedAt: Date;
 
 
 }
